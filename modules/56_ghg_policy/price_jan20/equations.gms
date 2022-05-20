@@ -112,7 +112,7 @@ q56_cell_to_reg(i2,pollutants,emis_source) ..
                  v56_reward_cdr_aff(j2) =e=
             	 s56_c_price_induced_aff*
             	 sum(ac,
-            	 (sum(aff_effect,(1-s56_buffer_aff)*vm_cdr_aff(j2,ac,aff_effect)) * sum((cell(i2,j2),ct), p56_c_price_aff(ct,i2,ac)*im_CDR_tax_factor(ct,i2)))
+            	 (sum(aff_effect,(1-s56_buffer_aff)*vm_cdr_aff(j2,ac,aff_effect)) * sum((cell(i2,j2),ct), p56_c_price_aff(ct,i2,ac)*i56_CDR_tax_factor(ct,i2)))
             	 / ((1+sum((cell(i2,j2),ct),pm_interest(ct,i2)))**(ac.off*5)))
                  *sum((cell(i2,j2),ct),pm_interest(ct,i2)/(1+pm_interest(ct,i2)));
 
