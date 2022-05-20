@@ -22,12 +22,12 @@ p56_country_dummy(policy_countries56) = 1;
 * Countries are weighted by their population size.
 p56_region_price_shr(t_all,i) = sum(i_to_iso(i,iso), p56_country_dummy(iso) * im_pop_iso(t_all,iso)) / sum(i_to_iso(i,iso), im_pop_iso(t_all,iso));
 *Anne Merfort: In case of separate markets and prices for emissions and removals 
-*im_CDR_tax_factor is the multiplyer to convert co2 prices to cdr prices, equal to 1 by default in case of uniform carbon price
-im_CDR_tax_factor(t_all,i)   = 1;
+*i56_CDR_tax_factor is the multiplyer to convert co2 prices to cdr prices, equal to 1 by default in case of uniform carbon price
+i56_CDR_tax_factor(t_all,i)   = 1;
 ****select ghg prices
 $ifthen "%c56_pollutant_prices%" == "coupling"
  im_pollutant_prices(t_all,i,pollutants) = f56_pollutant_prices_coupling(t_all,i,pollutants);
- im_CDR_tax_factor(t_all,i)   = f56_CDR_tax_factor(t_all,i);
+ i56_CDR_tax_factor(t_all,i)   = f56_CDR_tax_factor(t_all,i);
 $elseif "%c56_pollutant_prices%" == "emulator"
  im_pollutant_prices(t_all,i,pollutants) = f56_pollutant_prices_emulator(t_all,i,pollutants);
 $else
