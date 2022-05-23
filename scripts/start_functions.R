@@ -535,6 +535,7 @@ getReportData <- function(path_to_report_bioenergy, mute_ghgprices_until = "y201
     price_CDR[price_CDR==0] <- 1e-4
 
     out <- price_CDR / price_co2
+    dimnames(out)[[3]] <- "co2_c"
     # Remove GLO region
     notGLO <- getRegions(mag)[!(getRegions(mag)=="GLO")]
     # delete old input file before updating it

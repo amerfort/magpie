@@ -67,7 +67,7 @@ $if "%c56_pollutant_prices%" == "coupling" $include "./modules/56_ghg_policy/inp
 $if "%c56_pollutant_prices%" == "coupling" $offdelim
 $if "%c56_pollutant_prices%" == "coupling" ;
 
-$if "%c56_pollutant_prices%" == "coupling" table f56_CDR_tax_factor(t_all,i) scale factor for CDR tax as fraction or multiplyer from CO2 price 
+$if "%c56_pollutant_prices%" == "coupling" table f56_CDR_tax_factor(t_all,i,,pollutants) scale factor for CDR tax as fraction or multiplyer from CO2 price 
 $if "%c56_pollutant_prices%" == "coupling" $ondelim
 $if "%c56_pollutant_prices%" == "coupling" $include "./modules/56_ghg_policy/input/f56_CDR_tax_factor.cs3"
 $if "%c56_pollutant_prices%" == "coupling" $offdelim
